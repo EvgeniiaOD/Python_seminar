@@ -5,39 +5,33 @@
 # произведение P. Помогите Кате отгадать задуманные Петей числа.
 
 
-# numSum = int(input("The sum of this two numbers:"))
-# numProduct = int(input("The product of this two numbers:"))
-
-# solution_found = False
-
-# if numSum in range(2, 2001):
-#     for num1 in range(1001):
-#         for num2 in range(1001):
-#             if num1 + num2 == numSum and num1 * num2 == numProduct:
-#                 print(f"Peter's numbers are: {num1}, {num2}")
-#                 solution_found = True
-#                 break  
-#         if solution_found:
-#             break  
-#     if not solution_found:
-#         print("ooops! Solution doesn't exist")
-# else:
-#     print("One or both numbers don't meet the condition")
-
-# полностью мой вариант, где я никак не могу понять как выводить строку print ("ooops! Solution doesn't exist"), 
-# ТОЛЬКО если у задачи нет решения: 
-#  
 numSum = int(input("The sum of this two numbers:"))
 numProduct = int(input("The product of this two numbers:"))
-num1=1
-num2=1
-if numSum in range(2, 2001):
-    for num1 in range(1001):
-        for num2 in range(1001):
-            if num1+num2 == numSum:
-                if num1*num2 == numProduct:
-                    print (f"Peter's numbers are: {num1}, {num2}")
-            else: num2+=1       
-        num1+=1
-    print ("ooops! Solution doesn't exist")       
-else: print("One or both numbers don't meet the condition")  
+problem_solved = False
+resultList=[]
+for i in range(1, 1001):
+    j=numSum-i
+    if i*j==numProduct:
+        resultList.append((i,j))
+        problem_solved=True
+    i+=1
+if not problem_solved:
+    print("Ooops! Solution doesn't exist")
+print(*resultList)
+
+#  2 вариант:
+
+numSum = int(input("The sum of this two numbers:"))
+numProduct = int(input("The product of this two numbers:"))
+problem_solved = False
+
+for num1 in range(1, 1001):
+    for num2 in range(1, 1001):
+        if (num2+num1==numSum) and (num2*num1==numProduct):
+            print (num1,num2) 
+            problem_solved = True
+        else: num2+=1
+    num1+=1
+
+if not problem_solved:
+    print ("ooops")
