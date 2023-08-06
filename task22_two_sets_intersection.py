@@ -6,7 +6,7 @@
 # Затем пользователь вводит сами элементы множеств.
 
 num = int(input("Number of elements for set№1:"))
-set_1= set()
+set_1= set() #можно создать список и потом его еонвертировать в множество. Но есть ли в этом смысл? 
 for i in range(num):
     set_1.add(int(input("input values:")))
 num = int(input("Number of elements for set№2:"))
