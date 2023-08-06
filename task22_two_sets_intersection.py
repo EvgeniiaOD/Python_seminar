@@ -9,14 +9,12 @@ num = int(input("Number of elements for set№1:"))
 set_1= set()
 for i in range(num):
     set_1.add(int(input("input values:")))
-print(*set_1)
 num = int(input("Number of elements for set№2:"))
 set_2= set()
 for i in range(num):
     set_2.add(int(input("input values:")))
-print(*set_2)
 
-print(*set_1.intersection(set_2))
+print(*sorted(set_1.intersection(set_2))))
 
 
 
