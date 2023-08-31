@@ -161,5 +161,5 @@ def work_with_phonebook():
             add_user(phone_book,user_data)
             write_txt('phonebook.csv',phone_book)
 
-choice=show_menu()
+work_with_phonebook()
 
